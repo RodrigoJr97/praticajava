@@ -44,7 +44,8 @@ public class MainAluno {
 		aluno1.getDisciplina().setNota4(Double.parseDouble(n4));
 		
 		System.out.println(aluno1);
-		System.out.println(aluno1.getDisciplina().toString());
+		System.out.println(aluno1.getSituacaoAluno());
+
 		
 	}
 

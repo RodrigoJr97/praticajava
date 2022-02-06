@@ -72,7 +72,9 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return "Nome do Aluno: " + getNome() + "\nMatricula: " + getMatricula() + "\nNome Escola: " + getNomeEscola();
+		return "Nome do Aluno: " + getNome() + "\nMatricula: " + getMatricula()
+		+ "\nNome Escola: " + getNomeEscola()
+		+ "\n" + getDisciplina();
 	}
 
 	public double getMediaNota() {
@@ -80,12 +82,15 @@ public class Aluno {
 		       + disciplina.getNota4()) / 4;		
 	}
 	
-	public boolean getSituacaoAluno() {
+	public String getSituacaoAluno() {
 		double media = this.getMediaNota();
 		if (media >= 60) {
-			return true;
+			if (media >= 90 || media == 100) {
+				return "APROVADO Com Excelencia. Média: " + getMediaNota();
+			}
+			return "APROVADO. Média: " + getMediaNota();
 		} else {
-			return false;
+			return "REPROVADO Média: " + getMediaNota();
 		}
 	}
 	
