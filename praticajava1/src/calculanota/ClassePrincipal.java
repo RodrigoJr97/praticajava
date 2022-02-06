@@ -1,16 +1,37 @@
 package calculanota;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class ClassePrincipal {
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
 
-		int n1 = 25, n2 = 45, n3 = 30, n4 = 34;
-		int media = (n1+n2+n3+n4) / 4;
-		
-		System.out.println("Média é: " + media);
-		
+		String carros = JOptionPane.showInputDialog("Informe quantidade de carros?");
+		String pessoas = JOptionPane.showInputDialog("Informe quantidade de pessoas?");
+
+		double nCarros = Double.parseDouble(carros);
+		double nPessoas = Double.parseDouble(pessoas);
+
+		int divisao = (int) (nCarros / nPessoas);
+
+		double resto = nCarros % nPessoas;
+
+		int resposta = JOptionPane.showConfirmDialog(null, "Deseja ver o resultado da divisão?");
+
+
+		if (resposta == 0) {
+			JOptionPane.showMessageDialog(null, "Deu: " + divisao + " carros para cada.");
+		} else {
+			System.out.println("Ñ quer ver o resultado");
+		}
+
+		resposta = JOptionPane.showConfirmDialog(null, "Deseja ver o resto da divisão?");
+
+		if (resposta == 0) {
+			JOptionPane.showMessageDialog(null, "Sobrou: " + resto + " carros.");
+		} else {
+			System.out.println("Ñ quer ver o resultado");
+		}
+
 	}
 
 }
