@@ -1,5 +1,7 @@
 package introducaopoo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Aluno {
@@ -7,8 +9,8 @@ public class Aluno {
 	private String nome;
 	private String matricula;
 	private String nomeEscola;
-	
-	private Disciplina disciplina = new Disciplina();
+
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	public Aluno() {
 
@@ -44,13 +46,13 @@ public class Aluno {
 	public void setNomeEscola(String nomeEscola) {
 		this.nomeEscola = nomeEscola;
 	}
-	
-	public Disciplina getDisciplina() {
-		return disciplina;
+
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
-	
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
 
 	@Override
@@ -72,16 +74,20 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return "Nome do Aluno: " + getNome() + "\nMatricula: " + getMatricula()
-		+ "\nNome Escola: " + getNomeEscola()
-		+ "\n" + getDisciplina();
+		return "Nome do Aluno: " + getNome() + "\nMatricula: " + getMatricula() + "\nNome Escola: " + getNomeEscola()
+				+ "\n" + getDisciplinas();
 	}
 
 	public double getMediaNota() {
-		return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3()
-		       + disciplina.getNota4()) / 4;		
+		double nota = 0;
+		for (int i = 0; i < disciplinas.size(); i++) {
+			double notaAux = disciplinas.get(i).getNota();
+			nota += notaAux;
+		}
+	    
+		return nota / 4;
 	}
-	
+
 	public String getSituacaoAluno() {
 		double media = this.getMediaNota();
 		if (media >= 60) {
@@ -93,6 +99,5 @@ public class Aluno {
 			return "REPROVADO Média: " + getMediaNota();
 		}
 	}
-	
 
 }
