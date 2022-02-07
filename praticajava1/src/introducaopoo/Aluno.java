@@ -79,24 +79,23 @@ public class Aluno {
 	}
 
 	public double getMediaNota() {
-		double nota = 0;
-		for (int i = 0; i < disciplinas.size(); i++) {
-			double notaAux = disciplinas.get(i).getNota();
-			nota += notaAux;
+		double somaNotas = 0.0;
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
 		}
 	    
-		return nota / 4;
+		return somaNotas / disciplinas.size();
 	}
 
 	public String getSituacaoAluno() {
 		double media = this.getMediaNota();
 		if (media >= 60) {
 			if (media >= 90 || media == 100) {
-				return "APROVADO Com Excelencia. Média: " + getMediaNota();
+				return "APROVADO Com Excelencia";
 			}
-			return "APROVADO. Média: " + getMediaNota();
+			return "APROVADO";
 		} else {
-			return "REPROVADO Média: " + getMediaNota();
+			return "REPROVADO";
 		}
 	}
 

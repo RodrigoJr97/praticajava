@@ -10,30 +10,37 @@ public class MainAluno {
 	public static void main(String[] args) {
 
 		Aluno aluno1 = new Aluno();
-		
+
 		String nome = JOptionPane.showInputDialog("Nome do Aluno?");
 		String matricula = JOptionPane.showInputDialog("Matricula?");
 		String nomeEscola = JOptionPane.showInputDialog("Nome da Escola?");
-		
+
 		aluno1.setNome(nome);
 		aluno1.setMatricula(matricula);
 		aluno1.setNomeEscola(nomeEscola);
-		
-		Disciplina disc1 = new Disciplina("Java Básico", 10);
-		Disciplina disc2 = new Disciplina("SQL Básico", 57);
-		Disciplina disc3 = new Disciplina("Sring", 32);
-		Disciplina disc4 = new Disciplina("Introdução a List", 22);
-		
-		aluno1.getDisciplinas().add(disc1);
-		aluno1.getDisciplinas().add(disc2);
-		aluno1.getDisciplinas().add(disc3);
-		aluno1.getDisciplinas().add(disc4);
-		
+
+		for (int i = 1; i <= 4; i++) {
+			String nomeDisciplina = JOptionPane.showInputDialog("Nome da Disciplina " + i + "?");
+			String nota = JOptionPane.showInputDialog("Nota da Disciplina " + i + "?");
 			
+			Disciplina disciplina = new Disciplina();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(nota));
+
+			aluno1.getDisciplinas().add(disciplina);
+		}
+		
+		int escolha = JOptionPane.showConfirmDialog(null, "Quer remover alguma disciplina?");
+		
+		if (escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Disciplina 1, 2, 3 ou 4");
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - 1);
+		}
+
 		System.out.println(aluno1);
+		System.out.println("Média: " + aluno1.getMediaNota());
 		System.out.println(aluno1.getSituacaoAluno());
 
-		
 	}
 
 }
