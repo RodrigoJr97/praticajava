@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import introducaopoo.constantes.StatusAluno;
+
 public class Aluno {
 
 	private String nome;
@@ -91,11 +93,11 @@ public class Aluno {
 		double media = this.getMediaNota();
 		if (media >= 50) {
 			if (media >= 60) {
-				return "APROVADO";
+				return StatusAluno.APROVADO;
 			}
-			return "Recuperação";
+			return StatusAluno.RECUPERACAO;
 		} else {
-			return "REPROVADO";
+			return StatusAluno.REPROVADO;
 		}
 	}
 
