@@ -83,17 +83,17 @@ public class Aluno {
 		for (Disciplina disciplina : disciplinas) {
 			somaNotas += disciplina.getNota();
 		}
-	    
+
 		return somaNotas / disciplinas.size();
 	}
 
 	public String getSituacaoAluno() {
 		double media = this.getMediaNota();
-		if (media >= 60) {
-			if (media >= 90 || media == 100) {
-				return "APROVADO Com Excelencia";
+		if (media >= 50) {
+			if (media >= 60) {
+				return "APROVADO";
 			}
-			return "APROVADO";
+			return "Recuperação";
 		} else {
 			return "REPROVADO";
 		}
