@@ -13,6 +13,13 @@ import introducaopoo.constantes.StatusAluno;
 public class MainAluno {
 
 	public static void main(String[] args) {
+		
+		String login = JOptionPane.showInputDialog("Informe o Login");
+		String senha = JOptionPane.showInputDialog("Informe a Senha");
+		
+		/*Simples validação de acesso*/
+		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("jesus")) {
+		
 
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
@@ -22,7 +29,7 @@ public class MainAluno {
 		 */
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
-		for (int qtd = 1; qtd <= 5; qtd++) {
+		for (int qtd = 1; qtd <= 3; qtd++) {
 			Aluno aluno = new Aluno();
 
 			String nome = JOptionPane.showInputDialog("Nome do " + qtd + "º Aluno?");
@@ -91,7 +98,13 @@ public class MainAluno {
 		for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
 			System.out.println(aluno.getNome() + ", Média: " + aluno.getMediaNota());
 		}
+		
+		
 
+	} else {
+		System.out.println("Login ou Senha inválido");
 	}
+		
+  }
 
 }
