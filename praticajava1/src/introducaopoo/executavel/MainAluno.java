@@ -1,4 +1,4 @@
-package executavel;
+package introducaopoo.executavel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,8 +6,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import introducaopoo.Aluno;
-import introducaopoo.Disciplina;
+import introducaopoo.classes.Aluno;
+import introducaopoo.classes.Disciplina;
 import introducaopoo.constantes.StatusAluno;
 
 public class MainAluno {

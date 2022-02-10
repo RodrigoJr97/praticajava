@@ -1,4 +1,4 @@
-package introducaopoo;
+package introducaopoo.classes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,12 +6,10 @@ import java.util.Objects;
 
 import introducaopoo.constantes.StatusAluno;
 
-public class Aluno {
+public class Aluno extends Pessoa{
 
-	private String nome;
 	private String matricula;
 	private String nomeEscola;
-
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	public Aluno() {
@@ -19,8 +17,7 @@ public class Aluno {
 	}
 
 	public Aluno(String nome, String matricula, String nomeEscola) {
-		super();
-		this.nome = nome;
+		super.nome = nome;
 		this.matricula = matricula;
 		this.nomeEscola = nomeEscola;
 	}
@@ -30,7 +27,7 @@ public class Aluno {
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		super.nome = nome;
 	}
 
 	public String getMatricula() {
@@ -101,4 +98,15 @@ public class Aluno {
 		}
 	}
 
+	@Override
+	public boolean pessoaMaiorIdade() {
+		// TODO Auto-generated method stub
+		return super.pessoaMaiorIdade();
+	}
+
+	@Override
+	public double salario() {
+		return 1500.0;
+	}
+	
 }
