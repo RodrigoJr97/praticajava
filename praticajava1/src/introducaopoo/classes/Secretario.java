@@ -1,21 +1,29 @@
 package introducaopoo.classes;
 
-public class Secretario extends Pessoa {
+import introducaopoo.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso{
 
 	private String registro;
 	private String nivelCargo;
 	private String experiencia;
-
+	
+	private String login;
+	private String senha;
+	
+	
 	public Secretario() {
 		super();
 	}
+	
 
-	public Secretario(String registro, String nivelCargo, String experiencia) {
+	public Secretario(String login, String senha) {
 		super();
-		this.registro = registro;
-		this.nivelCargo = nivelCargo;
-		this.experiencia = experiencia;
+		this.login = login;
+		this.senha = senha;
 	}
+
+
 
 	public String getRegistro() {
 		return registro;
@@ -40,6 +48,29 @@ public class Secretario extends Pessoa {
 	public void setExperiencia(String experiencia) {
 		this.experiencia = experiencia;
 	}
+	
+	
+
+
+	public String getLogin() {
+		return login;
+	}
+
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+
+	public String getSenha() {
+		return senha;
+	}
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 
 	@Override
 	public String toString() {
@@ -52,6 +83,17 @@ public class Secretario extends Pessoa {
 		return 2000.75 + (3000 * 0.9);
 	}
 
-	
+	@Override
+	public boolean autenticar(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+		return autenticar();
+	}
+
+	@Override
+	public boolean autenticar() {
+		return login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("jesus");
+	}
+
 	
 }

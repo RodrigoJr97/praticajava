@@ -8,7 +8,9 @@ import javax.swing.JOptionPane;
 
 import introducaopoo.classes.Aluno;
 import introducaopoo.classes.Disciplina;
+import introducaopoo.classes.Secretario;
 import introducaopoo.constantes.StatusAluno;
+import introducaopoo.interfaces.PermitirAcesso;
 
 public class MainAluno {
 
@@ -17,8 +19,10 @@ public class MainAluno {
 		String login = JOptionPane.showInputDialog("Informe o Login");
 		String senha = JOptionPane.showInputDialog("Informe a Senha");
 		
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
+		
 		/*Simples validação de acesso*/
-		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("jesus")) {
+		if (permitirAcesso.autenticar()) {
 		
 
 		List<Aluno> alunos = new ArrayList<Aluno>();
@@ -102,7 +106,7 @@ public class MainAluno {
 		
 
 	} else {
-		System.out.println("Login ou Senha inválido");
+		JOptionPane.showInternalMessageDialog(null, "Acesso Negado");
 	}
 		
   }
