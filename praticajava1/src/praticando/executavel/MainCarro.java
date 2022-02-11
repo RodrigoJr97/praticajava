@@ -6,20 +6,25 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import praticando.auxilar.AutenticacaoAcesso;
 import praticando.classes.Carro;
+import praticando.classes.Gerente;
 import praticando.constantes.Marca;
+import praticando.interfaces.Acesso;
 
 public class MainCarro {
 
 	public static void main(String[] args) {
 
-
+		
 		List<Carro> carros = new ArrayList<Carro>();
 		
 		String login = JOptionPane.showInputDialog("Digite seu Login");
 		String senha = JOptionPane.showInputDialog("Digite sua Senha");
 		
-		if (login.equals("adm") && senha.equals("teste")) {
+		Acesso acesso = new Gerente(login, senha);
+		
+		if (new AutenticacaoAcesso(acesso).confirmarAutenticacao()) {
 
 		String qtdCarro = JOptionPane.showInputDialog("Quantos carros quer adicionar?");
 		int qtd = Integer.parseInt(qtdCarro);

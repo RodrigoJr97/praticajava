@@ -23,7 +23,7 @@ public class MainAluno {
 		
 		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
-		/*Simples validação de acesso*/
+		
 		if (new FuncaoAutenticacao(permitirAcesso).autenticarCursoJava()) {
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();

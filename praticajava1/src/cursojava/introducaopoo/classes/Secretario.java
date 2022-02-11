@@ -49,8 +49,6 @@ public class Secretario extends Pessoa implements PermitirAcesso{
 		this.experiencia = experiencia;
 	}
 	
-	
-
 
 	public String getLogin() {
 		return login;
@@ -92,7 +90,7 @@ public class Secretario extends Pessoa implements PermitirAcesso{
 
 	@Override
 	public boolean autenticar() {
-		return login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("jesus");
+		return login.equals("admin") && senha.equals("jesus");
 	}
 
 	
