@@ -1,4 +1,4 @@
-package introducaopoo.executavel;
+package cursojava.introducaopoo.executavel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,12 +6,12 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import introducaopoo.classes.Aluno;
-import introducaopoo.classes.Disciplina;
-import introducaopoo.classes.Secretario;
-import introducaopoo.classesauxiliares.FuncaoAutenticacao;
-import introducaopoo.constantes.StatusAluno;
-import introducaopoo.interfaces.PermitirAcesso;
+import cursojava.introducaopoo.classes.Aluno;
+import cursojava.introducaopoo.classes.Disciplina;
+import cursojava.introducaopoo.classes.Secretario;
+import cursojava.introducaopoo.classesauxiliares.FuncaoAutenticacao;
+import cursojava.introducaopoo.constantes.StatusAluno;
+import cursojava.introducaopoo.interfaces.PermitirAcesso;
 
 public class MainAluno {
 

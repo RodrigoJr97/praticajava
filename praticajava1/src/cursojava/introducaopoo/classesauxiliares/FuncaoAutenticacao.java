@@ -1,6 +1,6 @@
-package introducaopoo.classesauxiliares;
+package cursojava.introducaopoo.classesauxiliares;
 
-import introducaopoo.interfaces.PermitirAcesso;
+import cursojava.introducaopoo.interfaces.PermitirAcesso;
 
 /*Somente receber alguem que tenha o contrato com PermitirAcesso*/
 public class FuncaoAutenticacao {

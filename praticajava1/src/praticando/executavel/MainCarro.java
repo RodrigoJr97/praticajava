@@ -13,8 +13,6 @@ public class MainCarro {
 
 	public static void main(String[] args) {
 
-		// Carro carro1 = new Carro("BMW", "M4 Sport", "Preto", "BS001", 2020);
-		// Carro carro2 = new Carro("VW", "Golf GTI", "Vermelho", "VG001", 2021);
 
 		List<Carro> carros = new ArrayList<Carro>();
 		

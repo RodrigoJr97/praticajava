@@ -1,10 +1,10 @@
-package introducaopoo.classes;
+package cursojava.introducaopoo.classes;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import introducaopoo.constantes.StatusAluno;
+import cursojava.introducaopoo.constantes.StatusAluno;
 
 public class Aluno extends Pessoa{
 

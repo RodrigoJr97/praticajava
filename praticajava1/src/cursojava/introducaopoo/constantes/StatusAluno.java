@@ -1,4 +1,4 @@
-package introducaopoo.constantes;
+package cursojava.introducaopoo.constantes;
 
 /*Classe e constantes estáticas*/
 public class StatusAluno {

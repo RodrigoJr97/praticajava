@@ -1,6 +1,6 @@
-package introducaopoo.classes;
+package cursojava.introducaopoo.classes;
 
-import introducaopoo.interfaces.PermitirAcesso;
+import cursojava.introducaopoo.interfaces.PermitirAcesso;
 
 public class Secretario extends Pessoa implements PermitirAcesso{
 
@@ -80,7 +80,7 @@ public class Secretario extends Pessoa implements PermitirAcesso{
 
 	@Override
 	public double salario() {
-		return 2000.75 + (3000 * 0.9);
+		return 2000.75 * 0.9;
 	}
 
 	@Override

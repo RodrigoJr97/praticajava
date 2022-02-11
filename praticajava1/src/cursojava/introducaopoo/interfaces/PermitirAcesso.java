@@ -1,4 +1,4 @@
-package introducaopoo.interfaces;
+package cursojava.introducaopoo.interfaces;
 
 public interface PermitirAcesso {
 	

@@ -1,4 +1,4 @@
-package introducaopoo.classes;
+package cursojava.introducaopoo.classes;
 
 import java.util.Objects;
 

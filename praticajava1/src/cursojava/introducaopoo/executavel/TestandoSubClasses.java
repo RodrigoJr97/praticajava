@@ -1,8 +1,8 @@
-package introducaopoo.executavel;
+package cursojava.introducaopoo.executavel;
 
-import introducaopoo.classes.Aluno;
-import introducaopoo.classes.Diretor;
-import introducaopoo.classes.Secretario;
+import cursojava.introducaopoo.classes.Aluno;
+import cursojava.introducaopoo.classes.Diretor;
+import cursojava.introducaopoo.classes.Secretario;
 
 public class TestandoSubClasses {
 
