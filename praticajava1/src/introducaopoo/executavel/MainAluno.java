@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import introducaopoo.classes.Aluno;
 import introducaopoo.classes.Disciplina;
 import introducaopoo.classes.Secretario;
+import introducaopoo.classesauxiliares.FuncaoAutenticacao;
 import introducaopoo.constantes.StatusAluno;
 import introducaopoo.interfaces.PermitirAcesso;
 
@@ -19,12 +20,12 @@ public class MainAluno {
 		String login = JOptionPane.showInputDialog("Informe o Login");
 		String senha = JOptionPane.showInputDialog("Informe a Senha");
 		
+		
 		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
 		/*Simples validação de acesso*/
-		if (permitirAcesso.autenticar()) {
+		if (new FuncaoAutenticacao(permitirAcesso).autenticarCursoJava()) {
 		
-
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
 		/*
