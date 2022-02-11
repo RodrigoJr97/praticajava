@@ -17,8 +17,13 @@ public class MainCarro {
 		// Carro carro2 = new Carro("VW", "Golf GTI", "Vermelho", "VG001", 2021);
 
 		List<Carro> carros = new ArrayList<Carro>();
+		
+		String login = JOptionPane.showInputDialog("Digite seu Login");
+		String senha = JOptionPane.showInputDialog("Digite sua Senha");
+		
+		if (login.equals("adm") && senha.equals("teste")) {
 
-		String qtdCarro = JOptionPane.showInputDialog("Quantos carros que adicionar?");
+		String qtdCarro = JOptionPane.showInputDialog("Quantos carros quer adicionar?");
 		int qtd = Integer.parseInt(qtdCarro);
 
 		for (int i = 1; i <= qtd; i++) {
@@ -42,8 +47,8 @@ public class MainCarro {
 		HashMap<String, List<Carro>> maps = new HashMap<String, List<Carro>>();
 
 		/*
-		 * Aqui estamos definindo que para cada chave que é do tipo String,
-		 * vamos ter uma nova lista de carro,
+		 * Aqui estamos definindo que para cada chave Constante que é do tipo String,
+		 * vamos ter uma nova lista de carro
 		 */
 		maps.put(Marca.BMW, new ArrayList<Carro>());
 		maps.put(Marca.GM, new ArrayList<Carro>());
@@ -51,6 +56,8 @@ public class MainCarro {
 		maps.put(Marca.VW, new ArrayList<Carro>());
 		maps.put(Marca.TOYOTA, new ArrayList<Carro>());
 
+		
+		/*Laço para percorrer e separar carros por marca*/
 		for (Carro carro : carros) {
 			if (carro.getMarca().equalsIgnoreCase("bmw")) {
 				maps.get(Marca.BMW).add(carro);
@@ -65,8 +72,9 @@ public class MainCarro {
 			}
 		}
 		
+		/*Condição para NÃO imprimir lista se estiver vazia*/
 		if (!maps.get(Marca.BMW).isEmpty()) {			
-			System.out.println("------------- Lista BMW -------------");
+			System.out.println("------------- BMW -------------");
 			for (Carro carro : maps.get(Marca.BMW)) {
 				System.out.println(carro);
 			}			
@@ -99,8 +107,14 @@ public class MainCarro {
 				System.out.println(carro);
 			}			
 		}
+		
 
-
+	} else { 
+		JOptionPane.showInternalMessageDialog(null, "ERRO! Login ou Senha Inválido.");
+	}
+		
+		
+		
 	}
 
 }
