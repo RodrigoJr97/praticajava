@@ -1,29 +1,42 @@
 package cursojava.introducaopoo.executavel;
 
-import javax.swing.JOptionPane;
+import cursojava.introducaopoo.classes.Aluno;
+import cursojava.introducaopoo.classes.Disciplina;
 
 public class ArrayVetor {
 	public static void main(String[] args) {
 
-		String qtdNotas = JOptionPane.showInputDialog("Quantas notas deseja adicionar?");
-		
-				
-		double[] notas = new double[Integer.parseInt(qtdNotas)];
-				
-		double aux = 0;
-		
-		for (int i = 0; i < notas.length; i++) {
-			String nota = JOptionPane.showInputDialog((i+1) + "º Nota?");
-			notas[i] = Double.parseDouble(nota);
+		double[] notas = { 24.5, 20.9, 21.7, 23.8 };
+		double[] notas2 = { 28.9, 31.9, 25.7, 33.8 };
+
+		Aluno aluno = new Aluno("Rodrigo", "0097", "JDev Treinamento");
+
+		Disciplina disciplina = new Disciplina();
+		disciplina.setDisciplina("Curso Java");
+		disciplina.setNota(notas);
+
+		Disciplina disciplina2 = new Disciplina();
+		disciplina2.setDisciplina("Java + Spring + SQL");
+		disciplina2.setNota(notas2);
+
+		aluno.getDisciplinas().add(disciplina);
+		aluno.getDisciplinas().add(disciplina2);
+
+		System.out.println("Nome Aluno: " + aluno.getNome());
+		System.out.println("Escola: " + aluno.getNomeEscola());
+		System.out.println("Matricula Aluno: " + aluno.getMatricula());
+
+		for (Disciplina disc : aluno.getDisciplinas()) {
+			System.out.println("-----------------------------------------");
+			System.out.println("Disciplina: " + disc.getDisciplina());
+
+			for (double nota : disc.getNota()) {
+				System.out.println("Nota: " + nota);
+			}
+
 		}
 		
-		for (int i = 0; i < notas.length; i++) {
-			System.out.println("Nota " + (i+1) + ": " + notas[i]);
-			aux += notas[i];
-		}
 		
-		
-		System.out.println("Soma: " + aux);
-		
+
 	}
 }
