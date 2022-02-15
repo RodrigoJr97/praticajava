@@ -73,7 +73,7 @@ public class Aluno extends Pessoa{
 
 	@Override
 	public String toString() {
-		return "Nome do Aluno: " + getNome() + "\nMatricula: " + getMatricula() + "\nNome Escola: " + getNomeEscola()
+		return "Nome do Aluno: " + getNome() + "\nIdade: " + getIdade() + "\nMatricula: " + getMatricula() + "\nNome Escola: " + getNomeEscola()
 				+ "\n" + getDisciplinas();
 	}
 
